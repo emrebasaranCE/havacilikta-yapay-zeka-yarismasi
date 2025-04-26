@@ -1,0 +1,32 @@
+[
+    {
+        "url": "http://localhost/frames/3598/",
+        "image_url": "/ljfgpemcvkmuadhxabwn_V2_1/frame_000000.jpg",
+        "video_name": "ljfgpemcvkmuadhxabwn_V2_1",
+        "session": "http://localhost/session/2/",
+        "translation_x": 0.02,
+        "translation_y": 0.01,
+        "translation_z": 0.03,
+        "health_status": 1
+    },
+    {
+        "url": "http://localhost/frames/4787/",
+        "image_url": "/ljfgpemcvkmuadhxabwn_V2_1/frame_000004.jpg",
+        "video_name": "ljfgpemcvkmuadhxabwn_V2_1",
+        "session": "http://localhost/session/2/",
+        "translation_x": 0.01,
+        "translation_y": 0.02,
+        "translation_z": 0.01,
+        "health_status": 1
+    },
+    {
+        "url": "http://localhost/frames/3916/",
+        "image_url": "/ljfgpemcvkmuadhxabwn_V2_1/frame_000008.jpg",
+        "video_name": "ljfgpemcvkmuadhxabwn_V2_1",
+        "session": "http://localhost/session/2/",
+        "translation_x": "NaN",
+        "translation_y": "NaN",
+        "translation_z": "NaN",
+        "health_status": 0
+    }
+]
