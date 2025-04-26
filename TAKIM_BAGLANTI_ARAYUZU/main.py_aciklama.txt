@@ -1,0 +1,8 @@
+1 - Config dosyasinda istenilen bilgilerin girilmesi
+2 - Modeli koda ver. (ayrica modeli ObjectDetectionModel kisminda entegre etmemiz lazim)
+3 - Sunucu(ConnectionHandler) sinifini initiate et ve calistir.
+4 - Sunucu uzerinden get_frames() ile frame'ler ile ilgili json verisini al.
+5 - Sunucu uzerinden translation json() verisini al. (muhtemelen bunu degistirecekler)
+6 - For dongusu ile frame'leri isleme islemine basla
+    - gerekli parametreleri vererek modeli calistir.
+    - sunucuya sonuclari gonder.

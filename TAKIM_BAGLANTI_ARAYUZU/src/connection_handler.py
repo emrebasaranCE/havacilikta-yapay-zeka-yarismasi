@@ -13,13 +13,13 @@ class ConnectionHandler:
         self.classes = None
         self.frames = None
         self.translations = None
-        self.frames_file = "frames.json"  # Kaydedilen frames dosyası
-        self.translations_file = "translations.json"  # Kaydedilen translations dosyası
+        self.frames_file = "frames.json"  # Kaydedilen frames dosyasi
+        self.translations_file = "translations.json"  # Kaydedilen translations dosyasi
         self.video_name = ''
         self.img_save_path = './_images/'
         
 
-        # URL'leri tanımla
+        # URL'leri tanimla
         self.url_login = self.base_url + "auth/"
         self.url_frames = self.base_url + "frames/"
         self.url_translations = self.base_url + "translation/"
@@ -126,10 +126,10 @@ class ConnectionHandler:
     
     def get_frames(self, retries=3, initial_wait_time=0.1):
         """
-        Dikkat: Bir dakika içerisinde bir takım maksimum 5 adet get_frames isteği atabilmektedir.
-        Bu kısıt yarışma esnasında yarışmacıların gereksiz istek atarak sunucuya yük binmesini
-        engellemek için tanımlanmıştır. get_frames fonksiyonunu kullanırken bu kısıtı göz önünde
-        bulundurmak yarışmacıların sorumluluğundadır.
+        Dikkat: Bir dakika içerisinde bir takim maksimum 5 adet get_frames isteği atabilmektedir.
+        Bu kisit yarişma esnasinda yarişmacilarin gereksiz istek atarak sunucuya yük binmesini
+        engellemek için tanimlanmiştir. get_frames fonksiyonunu kullanirken bu kisiti göz önünde
+        bulundurmak yarişmacilarin sorumluluğundadir.
         """
         try:
             # _images klasorunun mevcut olup olmadigini kontrol edelim
@@ -204,10 +204,10 @@ class ConnectionHandler:
 
     def get_translations(self, retries=3, initial_wait_time=0.1):
         """
-          Dikkat: Bir dakika içerisinde bir takım maksimum 5 adet get_frames isteği atabilmektedir.
-          Bu kısıt yarışma esnasında yarışmacıların gereksiz istek atarak sunucuya yük binmesini
-          engellemek için tanımlanmıştır. get_frames fonksiyonunu kullanırken bu kısıtı göz önünde
-          bulundurmak yarışmacıların sorumluluğundadır.
+          Dikkat: Bir dakika içerisinde bir takim maksimum 5 adet get_frames isteği atabilmektedir.
+          Bu kisit yarişma esnasinda yarişmacilarin gereksiz istek atarak sunucuya yük binmesini
+          engellemek için tanimlanmiştir. get_frames fonksiyonunu kullanirken bu kisiti göz önünde
+          bulundurmak yarişmacilarin sorumluluğundadir.
           """
         try:
             # _images klasorunun mevcut olup olmadigini kontrol edelim
@@ -254,18 +254,18 @@ class ConnectionHandler:
 
     def send_prediction(self, prediction, retries=3, initial_wait_time=0.1):
         """
-        Dikkat: Bir dakika içerisinde bir takım maksimum 80 frame için tahmin gönderebilecektir.
-        Bu kısıt yarışma esnasında yarışmacıların gereksiz istek atarak sunucuya yük binmesini
-        engellemek için tanımlanmıştır. send_prediction fonksiyonunu kullanırken bu kısıtı göz
-        önünde bulundurmak yarışmacıların sorumluluğundadır.
+        Dikkat: Bir dakika içerisinde bir takim maksimum 80 frame için tahmin gönderebilecektir.
+        Bu kisit yarişma esnasinda yarişmacilarin gereksiz istek atarak sunucuya yük binmesini
+        engellemek için tanimlanmiştir. send_prediction fonksiyonunu kullanirken bu kisiti göz
+        önünde bulundurmak yarişmacilarin sorumluluğundadir.
 
-        Öneri: Bir dakika içerisinde gönderilen istek sayısı tutularak sistem hızlı çalışıyorsa
-        bekletilebilir (wait() vb). Azami istek sınırı aşıldığında sunucu gönderilen tahmini
-        veritabanına yazmamaktadır. Dolayısı ile bu durumu gözardı eden takımların istek sınır
-        aşımı yapan gönderimleri değerlendirilMEyecektir. İstek sınırı aşıldığında sunucu aşağıdaki
-        cevabı dönmektedir:
+        Öneri: Bir dakika içerisinde gönderilen istek sayisi tutularak sistem hizli çalişiyorsa
+        bekletilebilir (wait() vb). Azami istek siniri aşildiğinda sunucu gönderilen tahmini
+        veritabanina yazmamaktadir. Dolayisi ile bu durumu gözardi eden takimlarin istek sinir
+        aşimi yapan gönderimleri değerlendirilMEyecektir. İstek siniri aşildiğinda sunucu aşağidaki
+        cevabi dönmektedir:
             {"detail":"You do not have permission to perform this action."}
-        Ayrıca yarışmacılar sunucudan bu gibi başarısız bir gönderimi işaret eden cevap alındığında
+        Ayrica yarişmacilar sunucudan bu gibi başarisiz bir gönderimi işaret eden cevap alindiğinda
         gönderilemeyen tahmini sunucuya tekrar göndermek üzere bir mekanizma tasarlayabilir.
         """
 
@@ -286,7 +286,7 @@ class ConnectionHandler:
                     logging.info("Prediction sent successfully. \n\t{}".format(payload))
                     return response
                 # Ilgili frame'e ait olan tahmimizi daha once gondermis oldugumuz icin gonderemediysek loglayalim ve
-                # donguden cikalim. Aynı frame icin tekrar tekrar tahmin atmayi denemeyelim
+                # donguden cikalim. Ayni frame icin tekrar tekrar tahmin atmayi denemeyelim
                 elif response.status_code == 406:
                     logging.error(
                         "Prediction send failed - 406 Not Acceptable. Already sent. \n\t{}".format(response.text))
